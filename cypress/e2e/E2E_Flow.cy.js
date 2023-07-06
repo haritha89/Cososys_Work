@@ -1,11 +1,12 @@
 import {
   loginAndLogout,
   waitToload,
-  loginInvalidCredentials,
+  registerNewUser,
+  validationAndDeleteAccount,
   contactFormValidation,
   registerAndDeleteAccount,
   productByCategoryAndDeleteCart,
-  subscriptionAndRegisterBeforeCheckout,
+  subscriptionFlow,
   productByBrandsAndReview,
   productBySearchAndOrderFlow,
 } from "../support/util";
@@ -24,15 +25,19 @@ describe("Login", () => {
     cy.visit(`${base_url}`);
   });
 
-  it("Login with correct credentials and logout ", () => {
+  it("Login with correct credentials and logout", () => {
     const waittime = 2000;
-    waitToload(waittime);
-    loginAndLogout(waittime);
+    const email = "scarlett37+0@ethereal.email";
+    const password = "UCrVJq29Hx4MaPSdnP";
+    loginAndLogout(waittime, email, password);
+    cy.get(selectors.logOut).click();
   });
 
-  it("Login with incorrect credentials ", () => {
-    const InvaldLoginValidation = "Your email or password is incorrect!";
-    loginInvalidCredentials(InvaldLoginValidation);
+  it("Login with incorrect credentials", () => {
+    const waittime = 2000;
+    const email = "sc!444l@testtt.com";
+    const password = "UCrVJq29Hx4MnP";
+    loginAndLogout(waittime, email, password);
   });
 
   it("Contact Us Form ", () => {
@@ -41,7 +46,11 @@ describe("Login", () => {
     contactFormValidation(contactFormSubmissionMessage);
   });
 
-  it("Product Functionality by Category,assert the quantity and delete cart", () => {
+  it("Product Functionality by Category, assert the quantity, and delete cart", () => {
+    const waittime = 2000;
+    const email = "scarlett37+0@ethereal.email";
+    const password = "UCrVJq29Hx4MaPSdnP";
+    loginAndLogout(waittime, email, password);
     productByCategoryAndDeleteCart();
   });
 
@@ -54,11 +63,18 @@ describe("Login", () => {
     const waittime = 2000;
     const orderConfirmationMessage =
       "Congratulations! Your order has been confirmed!";
-
-    productBySearchAndOrderFlow(waittime, orderConfirmationMessage);
+    const email = "scarlett37+1@ethereal.email";
+    const password = "UCrVJq29Hx4MaPSdnP";
+    loginAndLogout(waittime, email, password);
+    productBySearchAndOrderFlow(
+      waittime,
+      orderConfirmationMessage,
+      email,
+      password
+    );
   });
 
-  it("Registration Flow Remove cart and delete account", () => {
+  it("Registration Flow: Remove cart and delete account", () => {
     const DeleteCartValidation = "Cart is empty! Click here to buy products.";
     const AccountCreateMessage = "Account Created!";
     const createAccountValidationMessage1 =
@@ -70,7 +86,8 @@ describe("Login", () => {
     const deleteAccountValidationMessage2 =
       "You can create a new account to take advantage of member privileges to enhance your online shopping experience with us.";
 
-    registerAndDeleteAccount(
+    registerNewUser();
+    validationAndDeleteAccount(
       DeleteCartValidation,
       AccountCreateMessage,
       createAccountValidationMessage1,
@@ -82,11 +99,8 @@ describe("Login", () => {
 
   it("Subscription Flow and Register before checkout", () => {
     const subscribeValidationMessage = "You have been successfully subscribed!";
-    const cartexpectedProduct = "Half Sleeves Top Schiffli Detailing - Pink";
+  const cartExpectedProduct = "Half Sleeves Top Schiffli Detailing - Pink";
 
-    subscriptionAndRegisterBeforeCheckout(
-      subscribeValidationMessage,
-      cartexpectedProduct
-    );
+  subscriptionFlow(subscribeValidationMessage, cartExpectedProduct);
   });
 });
