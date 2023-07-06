@@ -1,0 +1,41 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-8773
+END=8447
+title=Login Login with correct credentials and logout
+[CHAPTER]
+TIMEBASE=1/1000
+START=11919
+END=25685
+title=Login Login with incorrect credentials
+[CHAPTER]
+TIMEBASE=1/1000
+START=29083
+END=39457
+title=Login Contact Us Form 
+[CHAPTER]
+TIMEBASE=1/1000
+START=10806
+END=49838
+title=Login Product Functionality by Category, assert the quantity, and delete cart
+[CHAPTER]
+TIMEBASE=1/1000
+START=70493
+END=88891
+title=Login Product Functionality by Brands and review message 
+[CHAPTER]
+TIMEBASE=1/1000
+START=66269
+END=107294
+title=Login Product Functionality by Search Product and order flow
+[CHAPTER]
+TIMEBASE=1/1000
+START=112921
+END=148344
+title=Login Registration Flow: Remove cart and delete account
+[CHAPTER]
+TIMEBASE=1/1000
+START=146870
+END=183776
+title=Login Subscription Flow and Register before checkout
