@@ -11,22 +11,23 @@ Clone the repository:
 bash
 Copy code
 git clone git@github.com:haritha89/Cososys_Work.git
+
 Navigate to the project directory:
 
 bash
-Copy code
 cd Cososys_Work
+
 Checkout the master branch:
 
 bash
-Copy code
 git checkout master
+
 Install the dependencies:
 
 bash
-Copy code
 npm install
 Configuration
+
 Before running the tests, make sure to configure the necessary environment variables and test data. The configuration files can be found in the cypress/fixtures directory. Update the files according to your project requirements.
 
 Running the Tests
@@ -37,8 +38,9 @@ Open a terminal and navigate to the project directory if you haven't already.
 Run the Cypress test runner:
 
 bash
-Copy code
+
 npx cypress open
+
 The Cypress Test Runner will open, displaying the available test files.
 
 Click on a test file to run the tests within that file.
@@ -46,8 +48,9 @@ Click on a test file to run the tests within that file.
 Alternatively, you can run all tests headlessly (in the background) using the following command:
 
 bash
-Copy code
+
 npx cypress run
+
 The test results will be displayed in the terminal.
 
 After the tests complete, you can find the generated test reports and screenshots in the cypress/reports directory.
@@ -60,8 +63,9 @@ Fork the repository on GitHub.
 Create a new branch for your changes:
 
 bash
-Copy code
+
 git checkout -b feature/your-feature-name
+
 Make your changes and commit them with descriptive commit messages.
 
 Push your changes to your forked repository.
