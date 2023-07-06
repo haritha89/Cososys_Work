@@ -58,7 +58,6 @@ Fork the repository on GitHub.
 
 Create a new branch for your changes:
 
-bash
 
 git checkout -b feature/your-feature-name
 
