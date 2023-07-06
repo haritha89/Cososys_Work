@@ -4,12 +4,12 @@ This repository contains automated tests for the project using Cypress.
 Getting Started
 Prerequisites
 Node.js (v12 or above)
+
 Git
 Installation
 Clone the repository:
 
 bash
-Copy code
 git clone git@github.com:haritha89/Cososys_Work.git
 
 Navigate to the project directory:
